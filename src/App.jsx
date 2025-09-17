@@ -1,4 +1,6 @@
 const { useEffect } = React;
+import "bulma/css/bulma.min.css";
+
 const App = () => {
   useEffect(() => {
     const TOTAL_FRAMES = 50;
@@ -32,7 +34,19 @@ const App = () => {
   }, []);
 
   return (
-    <section className="hero"></section>
+    <div>
+      <section className="hero is-fullheight"></section>
+      <style>{`
+        *,*::after,*::before{box-sizing:border-box;margin:0;padding:0;font-family:sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue';}
+        a{-webkit-tap-highlight-color:transparent;}
+        body{height:500vh;width:100%;--sb-track-color:#fff;--sb-thumb-color:cyan;--sb-size:9px;}
+        body::-webkit-scrollbar{width:var(--sb-size);}
+        body::-webkit-scrollbar-track{background:var(--sb-track-color);border-radius:1px;}
+        body::-webkit-scrollbar-thumb{background:var(--sb-thumb-color);border-radius:1px;}
+        @supports not selector(::-webkit-scrollbar){body{scrollbar-color:var(--sb-thumb-color) var(--sb-track-color);}}
+        .hero{position:fixed;width:100%;min-height:100vh;inset:0;background-image:var(--bg-portada,url('assets/frames/0.webp'));background-size:contain;background-repeat:no-repeat;background-position:center;}
+      `}</style>
+    </div>
   );
 };
 
